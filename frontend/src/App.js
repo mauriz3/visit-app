@@ -6,6 +6,10 @@ import NotFound from "./components/NotFound";
 import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
 import Dashboard from "./components/dashboard/Dashboard";
+import { ToastContainer } from "react-toastify";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://127.0.0.1:8000";
 
 class App extends Component {
   render() {
@@ -20,6 +24,7 @@ class App extends Component {
             <Route path="*" component={NotFound} />
           </Switch>
         </Root>
+        <ToastContainer hideProgressBar={true} newestOnTop={true} />
       </div>
     );
   }
