@@ -1,4 +1,4 @@
-# visit-app
+# visit-app (WIP)
 Django + React visit app.
 
 ## Frontend
