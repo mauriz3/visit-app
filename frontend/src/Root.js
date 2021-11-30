@@ -5,17 +5,29 @@ import { createBrowserHistory } from "history";
 import { applyMiddleware, createStore } from "redux";
 import { routerMiddleware, ConnectedRouter } from "connected-react-router";
 
-import createRootReducer from "./Reducer";
+import rootReducer from "./Reducer";
+import { setCurrentUser, setToken } from "./components/login/LoginActions"; // new imports
+import { isEmpty } from "./utils/Utils"; // new imports
 
-const Root = ({ children, initialState = {} }) => {
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
+export default ({ children, initialState = {} }) => {
   const history = createBrowserHistory();
   const middleware = [thunk, routerMiddleware(history)];
 
   const store = createStore(
-    createRootReducer(history),
+    rootReducer(history),
     initialState,
     applyMiddleware(...middleware)
   );
+
+  // check localStorage
+  if (!isEmpty(localStorage.getItem("token"))) {
+    store.dispatch(setToken(localStorage.getItem("token")));
+  }
+  if (!isEmpty(localStorage.getItem("user"))) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    store.dispatch(setCurrentUser(user, ""));
+  }
 
   return (
     <Provider store={store}>
@@ -23,5 +35,3 @@ const Root = ({ children, initialState = {} }) => {
     </Provider>
   );
 };
-
-export default Root;
