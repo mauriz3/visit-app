@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     # 
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
     'djoser',
     'corsheaders',
-    # 
-    'apps.accounts' # add new application
+    # Aplications:
+    'apps.accounts',
+    'apps.visits'
 ]
 
 # define which origins are allowed
