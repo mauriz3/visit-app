@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getVisits } from "./VisitsActions";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Row, Col } from "react-bootstrap";
 import Visit from "./Visit";
 
 class VisitsList extends Component {
@@ -29,7 +29,7 @@ class VisitsList extends Component {
     const { visits } = this.props.visits;
 
     if (visits.length === 0) {
-      return <h2>Please add your first visit</h2>;
+      return <h2 className="mt-3">Data not found</h2>;
     }
 
     let items = visits.map(visit => {
@@ -38,30 +38,39 @@ class VisitsList extends Component {
 
     return (
       <div>
-        <h3>Date range</h3>
+        <h3 className="mt-3">Date range</h3>
         <Form>
-          <Form.Group>
-            <Form.Label>From:</Form.Label>
-            <Form.Control
-              type="date"
-              name="startDate"
-              value={this.startDate}
-              onChange={this.onChange}
-            />
-            <Form.Label>To:</Form.Label>
-            <Form.Control
-              type="date"
-              name="endDate"
-              value={this.endDate}
-              onChange={this.onChange}
-            />
-          </Form.Group>
+         <Row>
+           <Col>
+              <Form.Group>
+                <Form.Label>From:</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="startDate"
+                  value={this.startDate}
+                  onChange={this.onChange}
+                />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group>
+                <Form.Label>To:</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="endDate"
+                  value={this.endDate}
+                  onChange={this.onChange}
+                />
+              </Form.Group>
+            </Col>
+            <Col className="mt-2">
+              <Button className="mt-4" variant="success" onClick={this.onFilterClick}>
+                Filter
+              </Button>
+            </Col>
+          </Row>
         </Form>
-        <Button variant="success" onClick={this.onFilterClick}>
-          Filter
-        </Button>
-        <hr />
-        <h1>Visits</h1>
+        <h1 className="mt-4">Visits</h1>
         {items}
         <hr />
       </div>

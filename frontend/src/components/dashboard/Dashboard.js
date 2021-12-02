@@ -17,7 +17,8 @@ class Dashboard extends Component {
     return (
       <div>
         <Navbar bg="light">
-          <Navbar.Brand href="/">Home</Navbar.Brand>
+          <Navbar.Brand>
+            <Nav.Link href="/">HOME</Nav.Link></Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
