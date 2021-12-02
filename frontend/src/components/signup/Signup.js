@@ -31,7 +31,7 @@ class Signup extends Component {
       username: this.state.username,
       password: this.state.password
     };
-    this.props.signupNewUser(userData); // <-- signup new user request
+    this.props.signupNewUser(userData);
   };
 
   render() {

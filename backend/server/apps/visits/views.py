@@ -18,6 +18,8 @@ class VisitViewSet(viewsets.ModelViewSet):
     queryset = Visit.objects.all().order_by('created_at')
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = VisitFilter
+    authentication_classes = [] #disables authentication
+    permission_classes = [] #disables permission
 
     def get_queryset(self):
         return self.queryset
