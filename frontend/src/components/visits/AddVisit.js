@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { addVisit } from "./VisitsActions";
 import { isEmpty } from "./../../utils/Utils";
+import { BROWSER, OS } from "./VisitsTypes";
 
 class AddVisit extends Component {
   componentDidMount() {
@@ -37,22 +38,22 @@ const mapStateToProps = state => ({});
 
 const getBrowser = () => {
   let userAgent = navigator.userAgent;
-  let browserName = "Unknown";
-  if (userAgent.match(/chrome|chromium|crios/i)) browserName = "Chrome";
-  if (userAgent.match(/firefox|fxios/i)) browserName = "Firefox";
-  if (userAgent.match(/safari/i)) browserName = "Safari";
-  if (userAgent.match(/opr\//i)) browserName = "Opera";
-  if (userAgent.match(/edg/i)) browserName = "Edge";
+  let browserName = BROWSER.UNKNOWN.NAME;
+  if (userAgent.match(/chrome|chromium|crios/i)) browserName = BROWSER.CHROME.NAME;
+  if (userAgent.match(/firefox|fxios/i)) browserName = BROWSER.FIREFOX.NAME;
+  if (userAgent.match(/safari/i)) browserName = BROWSER.SAFARI.NAME;
+  if (userAgent.match(/opr\//i)) browserName = BROWSER.OPERA.NAME;
+  if (userAgent.match(/edg/i)) browserName = BROWSER.EDGE.NAME;
   return browserName
 };
 
 const getOS = () => {
-  let OSName = "Unknown";
-  if (navigator.userAgent.indexOf("Win") !== -1) OSName = "Windows";
-  if (navigator.userAgent.indexOf("Mac") !== -1) OSName = "MacOS";
-  if (navigator.userAgent.indexOf("Linux") !== -1) OSName = "Linux";
-  if (navigator.userAgent.indexOf("Android") !== -1) OSName = "Android";
-  if (navigator.userAgent.indexOf("like Mac") !== -1) OSName = "iOS";
+  let OSName = OS.UNKNOWN.NAME;
+  if (navigator.userAgent.indexOf("Win") !== -1) OSName = OS.WINDOWS.NAME;
+  if (navigator.userAgent.indexOf("Mac") !== -1) OSName = OS.MACOS.NAME;
+  if (navigator.userAgent.indexOf("Linux") !== -1) OSName = OS.LINUX.NAME;
+  if (navigator.userAgent.indexOf("Android") !== -1) OSName = OS.ANDROID.NAME;
+  if (navigator.userAgent.indexOf("like Mac") !== -1) OSName = OS.IOS.NAME;
   return OSName
 };
 

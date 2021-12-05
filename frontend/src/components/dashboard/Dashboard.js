@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { logout } from "../login/LoginActions";
-import VisitsList from "../visits/VisitsList";
+import VisitsView from "../visits/VisitsView";
 
 class Dashboard extends Component {
   onLogout = () => {
@@ -28,7 +28,7 @@ class Dashboard extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Container>
-          <VisitsList />
+          <VisitsView />
         </Container>
       </div>
     );
