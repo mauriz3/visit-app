@@ -74,7 +74,7 @@ class VisitsView extends Component {
               </Form.Group>
             </Col>
             <Col xs="3" sm="2" md="1">
-              <Button variant="success" onClick={this.onFilterClick}>
+              <Button variant="primary" onClick={this.onFilterClick}>
                 Go
               </Button>
             </Col>
@@ -82,13 +82,13 @@ class VisitsView extends Component {
         </Form>
         <Row className="my-3">
           <Col sm="4">
-            <VisitCard header="Total Visits" title={newVisits + recurrentVisits} border="success" />
+            <VisitCard header="Total Visits" title={newVisits + recurrentVisits} />
           </Col>
           <Col sm="4">
-            <VisitCard header="New Visits" title={newVisits} border="danger" />
+            <VisitCard header="New Visits" title={newVisits} />
           </Col>
           <Col sm="4">
-            <VisitCard header="Recurrent Visits" title={recurrentVisits} border="info" />
+            <VisitCard header="Recurrent Visits" title={recurrentVisits} />
           </Col>
         </Row>
         <Row>
@@ -105,7 +105,6 @@ class VisitsView extends Component {
           </Col>
           <Col lg="6">
             <Card
-              border=""
               className="mb-2"
             >
               <Card.Header>Browsers</Card.Header>

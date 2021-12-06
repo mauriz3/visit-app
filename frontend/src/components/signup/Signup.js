@@ -39,7 +39,7 @@ class Signup extends Component {
       <Container>
         <Row>
           <Col md="4">
-            <h1>Sign up</h1>
+            <h1 className="mt-4">Sign up</h1>
             <Form>
               <Form.Group controlId="usernameId">
                 <Form.Label>User name</Form.Label>
@@ -56,7 +56,7 @@ class Signup extends Component {
                 </FormControl.Feedback>
               </Form.Group>
 
-              <Form.Group controlId="passwordId">
+              <Form.Group controlId="passwordId" className="mt-4">
                 <Form.Label>Your password</Form.Label>
                 <Form.Control
                   isInvalid={this.props.createUser.passwordError}
@@ -71,7 +71,7 @@ class Signup extends Component {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form>
-            <Button color="primary" onClick={this.onSignupClick}>
+            <Button color="primary" className="mt-4" onClick={this.onSignupClick}>
               Sign up
             </Button>
             <p className="mt-2">

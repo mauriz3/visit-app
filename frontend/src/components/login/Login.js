@@ -30,7 +30,7 @@ class Login extends Component {
       <Container>
         <Row>
           <Col md="4">
-            <h1>Login</h1>
+            <h1 className="mt-4">Login</h1>
             <Form>
               <Form.Group controlId="usernameId">
                 <Form.Label>User name</Form.Label>
@@ -43,7 +43,7 @@ class Login extends Component {
                 />
               </Form.Group>
 
-              <Form.Group controlId="passwordId">
+              <Form.Group className="mt-4" controlId="passwordId">
                 <Form.Label>Your password</Form.Label>
                 <Form.Control
                   type="password"
@@ -54,7 +54,7 @@ class Login extends Component {
                 />
               </Form.Group>
             </Form>
-            <Button color="primary" onClick={this.onLoginClick}>
+            <Button color="primary" className="mt-4" onClick={this.onLoginClick}>
               Login
             </Button>
             <p className="mt-2">
