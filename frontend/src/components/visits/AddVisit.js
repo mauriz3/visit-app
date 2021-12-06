@@ -23,8 +23,15 @@ class AddVisit extends Component {
   render() {
     return (
       <div>
-        <hr />
-        <h2>Welcome!</h2>
+        <h2>
+          <span>w</span>
+          <span>e</span>
+          <span>l</span>
+          <span>c</span>
+          <span>o</span>
+          <span>m</span>
+          <span>e</span>
+        </h2>
       </div>
     );
   }
