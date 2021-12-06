@@ -1,6 +1,14 @@
 # visit-app (WIP)
 Django + React visit app.
 
+## Docker
+
+### Dev Launch
+    docker-compose -f docker-compose-dev.yml up --build
+
+### Pro Launch
+    docker-compose -f docker-compose.yml up --build
+
 ## Frontend
 
 ### Launch

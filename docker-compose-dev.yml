@@ -18,8 +18,8 @@ services:
         build:
             context: .
             dockerfile: ./docker/backend/Dockerfile
-        volumes:
-            
+        ports:
+            - 8000:8000
         entrypoint: /app/docker/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/server/django_static
