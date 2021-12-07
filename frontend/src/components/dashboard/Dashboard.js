@@ -18,16 +18,16 @@ class Dashboard extends Component {
       <div>
         <Navbar>
           <Navbar.Brand>
-            <Nav.Link href="/">HOME</Nav.Link></Navbar.Brand>
+            <Nav.Link href="/" id="navlink-home">HOME</Nav.Link></Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              User: <b>{user.username}</b>
+              User: <b id="navbar-username">{user.username}</b>
             </Navbar.Text>
-            <Nav.Link onClick={this.onLogout}>Logout</Nav.Link>
+            <Nav.Link id="navlink-logout" onClick={this.onLogout}>Logout</Nav.Link>
           </Navbar.Collapse>
         </Navbar>
-        <Container>
+        <Container id="dashboard-container">
           <VisitsView />
         </Container>
       </div>

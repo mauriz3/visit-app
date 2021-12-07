@@ -12,7 +12,7 @@ class VisitCard extends Component {
         >
           <Card.Header>{this.props.header}</Card.Header>
           <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Title id={this.props.header.replace(' ', '-').toLowerCase()}>{this.props.title}</Card.Title>
           </Card.Body>
         </Card>
       </div>

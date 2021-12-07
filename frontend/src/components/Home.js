@@ -8,15 +8,15 @@ class Home extends Component {
     return (
       <div>
         <Container>
-          <h1 className="mt-4">Home</h1>
+          <h1 className="mt-4" id="home-title">Home</h1>
           <p>
-            <Link to="/login/">Login</Link>
+            <Link to="/login/" id="login-link">Login</Link>
           </p>
           <p>
-            <Link to="/signup">Sign up</Link>
+            <Link to="/signup" id="signup-link">Sign up</Link>
           </p>
           <p>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/dashboard" id="dashboard-link">Dashboard</Link>
           </p>
         </Container>
         <Container>
