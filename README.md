@@ -1,4 +1,4 @@
-# visit-app (WIP)
+# visit-app
 Django + React visit app.
 
 ## Docker
