@@ -39,7 +39,7 @@ class Signup extends Component {
       <Container>
         <Row>
           <Col md="4">
-            <h1 className="mt-4">Sign up</h1>
+            <h1 className="mt-4" id="signup-title">Sign up</h1>
             <Form>
               <Form.Group controlId="usernameId">
                 <Form.Label>User name</Form.Label>
@@ -47,6 +47,7 @@ class Signup extends Component {
                   isInvalid={this.props.createUser.usernameError}
                   type="text"
                   name="username"
+                  id="username"
                   placeholder="Enter user name"
                   value={this.state.username}
                   onChange={this.onChange}
@@ -62,6 +63,7 @@ class Signup extends Component {
                   isInvalid={this.props.createUser.passwordError}
                   type="password"
                   name="password"
+                  id="password"
                   placeholder="Enter password"
                   value={this.password}
                   onChange={this.onChange}
@@ -71,11 +73,11 @@ class Signup extends Component {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form>
-            <Button color="primary" className="mt-4" onClick={this.onSignupClick}>
+            <Button color="primary" id="signup-button" className="mt-4" onClick={this.onSignupClick}>
               Sign up
             </Button>
             <p className="mt-2">
-              Already have account? <Link to="/login">Login</Link>
+              Already have account? <Link to="/login" id="login-link">Login</Link>
             </p>
           </Col>
         </Row>

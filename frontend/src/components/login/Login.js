@@ -30,13 +30,14 @@ class Login extends Component {
       <Container>
         <Row>
           <Col md="4">
-            <h1 className="mt-4">Login</h1>
+            <h1 className="mt-4" id="login-title">Login</h1>
             <Form>
               <Form.Group controlId="usernameId">
                 <Form.Label>User name</Form.Label>
                 <Form.Control
                   type="text"
                   name="username"
+                  id="username"
                   placeholder="Enter user name"
                   value={this.state.username}
                   onChange={this.onChange}
@@ -48,17 +49,18 @@ class Login extends Component {
                 <Form.Control
                   type="password"
                   name="password"
+                  id="password"
                   placeholder="Enter password"
                   value={this.state.password}
                   onChange={this.onChange}
                 />
               </Form.Group>
             </Form>
-            <Button color="primary" className="mt-4" onClick={this.onLoginClick}>
+            <Button color="primary" id="login-button" className="mt-4" onClick={this.onLoginClick}>
               Login
             </Button>
             <p className="mt-2">
-              Don't have account? <Link to="/signup">Signup</Link>
+              Don't have account? <Link to="/signup" id="signup-link">Signup</Link>
             </p>
           </Col>
         </Row>

@@ -23,7 +23,7 @@ class AddVisit extends Component {
   render() {
     return (
       <div>
-        <h2>
+        <h2 id="welcome-message">
           <span>w</span>
           <span>e</span>
           <span>l</span>
