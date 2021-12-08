@@ -19,8 +19,12 @@ Django + React visit app.
 
 ### Launch
     cd backend
+    virtualenv venv // Just for the first time.
     source venv/bin/activate
+    pip install -r requirements.txt // Just for the first time.
     cd server 
+    ./manage.py makemigrations // Create migration when you have model changes.
+    ./manage.py migrate // Apply migrations when you have model changes.
     python manage.py runserver
 
 ### REST API for accounts
